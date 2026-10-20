@@ -1,0 +1,1 @@
+const toggle=document.querySelector('#enabled');chrome.storage.local.get({enabled:true},s=>{toggle.checked=s.enabled!==false});toggle.addEventListener('change',()=>chrome.storage.local.set({enabled:toggle.checked}));

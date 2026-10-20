@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "Meme BGM",
+  "version": "0.7.2",
+  "description": "GMGN.AI、Fomo、Axiom、DeBot 的 BSC 代币专属音乐，自动播放一遍",
+  "permissions": [
+    "storage",
+    "offscreen"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_title": "Meme BGM",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "32": "icon32.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://gmgn.ai/*",
+        "https://fomo.family/*",
+        "https://axiom.trade/*",
+        "https://debot.ai/*"
+      ],
+      "js": [
+        "platforms.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "https://memebgm.fun/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "minimum_chrome_version": "116"
+}
